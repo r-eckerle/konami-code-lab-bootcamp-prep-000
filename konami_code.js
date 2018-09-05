@@ -11,19 +11,20 @@ const codes = [
   "a"
 ];
 
+var index = 0
+
 function init() {
   // your code here
   var body = document.querySelector('body')
-  var index = 0
   
-  body.addEventListener('keydown', (event) => {
-    const keyName = event.key;
+  body.addEventListener('keydown', (e) => {
+    const key = e.key;
     
-    if(keyName === codes[index]) {
+    if(key === codes[index]) {
       index++
       
-      if(index === codes.length) {
-        window.alert("HURRAY!")
+      if(index === codes.length - 1) {
+        alert("HURRAY!")
         index = 0
       }
     } else {
